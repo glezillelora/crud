@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left mb-2">
-                    <h2>Add Company</h2>
+                    <h2>Add Students</h2>
                 </div>
                 <div class="pull-right">
                     <a class="btn btn-primary" href="{{ route('companies.index') }}"> Back</a>
@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Company Name:</strong>
+                        <strong>Students Name:</strong>
                         <input type="text" name="name" class="form-control" placeholder="Company Name">
                         @error('name')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Company Email:</strong>
+                        <strong>Students Email:</strong>
                         <input type="email" name="email" class="form-control" placeholder="Company Email">
                         @error('email')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Company Address:</strong>
+                        <strong>Students Address:</strong>
                         <input type="text" name="address" class="form-control" placeholder="Company Address">
                         @error('address')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
