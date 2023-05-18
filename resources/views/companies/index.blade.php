@@ -32,35 +32,44 @@
             </div>
         @endif
         <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Students Name</th>
-                    <th>Students Email</th>
-                    <th>Students Address</th>
-                    <th width="280px">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($companies as $company)
-                    <tr>
-                        <td>{{ $company->id }}</td>
-                        <td>{{ $company->name }}</td>
-                        <td>{{ $company->email }}</td>
-                        <td>{{ $company->address }}</td>
-                        <td>
-                            <form action="{{ route('companies.destroy',$company->id) }}" method="Post">
-                                <a class="btn btn-primary" href="{{ route('companies.edit',$company->id) }}">Edit</a>
-                                <a class="btn btn-info" href="{{ route('companies.show', $company->id) }}">Show</a>
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-            </tbody>
-        </table>
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Students Name</th>
+            <th>Students Email</th>
+            <th>Students Address</th>
+            <th>Image</th>
+            <th width="280px">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($companies as $company)
+            <tr>
+                <td>{{ $company->id }}</td>
+                <td>{{ $company->name }}</td>
+                <td>{{ $company->email }}</td>
+                <td>{{ $company->address }}</td>
+                <td>
+                    @if ($company->image)
+                        <img src="{{ asset('images/' . $company->image) }}" alt="Company Image" width="100">
+                    @else
+                        No Image
+                    @endif
+                </td>
+                <td>
+                    <form action="{{ route('companies.destroy', $company->id) }}" method="POST">
+                        <a class="btn btn-primary" href="{{ route('companies.edit', $company->id) }}">Edit</a>
+                        <a class="btn btn-info" href="{{ route('companies.show', $company->id) }}">Show</a>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+
         {!! $companies->links() !!}
     </div>
 </body>

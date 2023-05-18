@@ -59,6 +59,16 @@
                         @enderror
                     </div>
                 </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Students Image:</strong>
+                        <input type="file" name="image" value="{{ $company->image }}" class="form-control"
+                            placeholder="Company Address">
+                        @error('image')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-primary ml-3">Submit</button>
             </div>
         </form>

@@ -39,12 +39,25 @@ class CompanyController extends Controller
             'name' => 'required',
             'email' => 'required',
             'address' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         
-        Company::create($request->post());
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imageName);
+        }
+
+        $company = new Company;
+        $company->name = $request->name;
+        $company->email = $request->email;
+        $company->address = $request->address;
+        $company->image = $imageName;
+        $company->save();
 
         return redirect()->route('companies.index')->with('success','Company has been created successfully.');
     }
+
 
     /**
     * Display the specified resource.
