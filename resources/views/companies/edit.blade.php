@@ -33,7 +33,7 @@
                     <div class="form-group">
                         <strong>Students Name:</strong>
                         <input type="text" name="name" value="{{ $company->name }}" class="form-control"
-                            placeholder="Company name">
+                            placeholder="Students name">
                         @error('name')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
@@ -42,7 +42,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Students Email:</strong>
-                        <input type="email" name="email" class="form-control" placeholder="Company Email"
+                        <input type="email" name="email" class="form-control" placeholder="Student Email"
                             value="{{ $company->email }}">
                         @error('email')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -53,7 +53,7 @@
                     <div class="form-group">
                         <strong>Students Address:</strong>
                         <input type="text" name="address" value="{{ $company->address }}" class="form-control"
-                            placeholder="Company Address">
+                            placeholder="Student Address">
                         @error('address')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
@@ -63,7 +63,7 @@
                     <div class="form-group">
                         <strong>Students Image:</strong>
                         <input type="file" name="image" value="{{ $company->image }}" class="form-control"
-                            placeholder="Company Address">
+                            placeholder="Upload Image">
                         @error('image')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror

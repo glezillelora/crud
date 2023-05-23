@@ -55,7 +55,7 @@ class CompanyController extends Controller
         $company->image = $imageName;
         $company->save();
 
-        return redirect()->route('companies.index')->with('success','Company has been created successfully.');
+        return redirect()->route('companies.index')->with('success','Student added successfully.');
     }
 
 
@@ -98,7 +98,7 @@ class CompanyController extends Controller
         
         $company->fill($request->post())->save();
 
-        return redirect()->route('companies.index')->with('success','Company Has Been updated successfully');
+        return redirect()->route('companies.index')->with('success','Student has been updated successfully');
     }
 
     /**
@@ -110,6 +110,6 @@ class CompanyController extends Controller
     public function destroy(Company $company)
     {
         $company->delete();
-        return redirect()->route('companies.index')->with('success','Company has been deleted successfully');
+        return redirect()->route('companies.index')->with('success','Student has been deleted successfully');
     }
 }

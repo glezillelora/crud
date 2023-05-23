@@ -38,7 +38,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Company Image:</strong>
+                    <strong>Student Image:</strong>
                     @if ($company->image)
                         <img src="{{ asset('images/' . $company->image) }}" alt="Company Image" width="200px">
                     @else
